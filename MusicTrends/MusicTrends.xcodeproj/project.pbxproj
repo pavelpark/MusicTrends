@@ -13,6 +13,7 @@
 		DBB735171EDE1AFD00383D6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBB735151EDE1AFD00383D6C /* Main.storyboard */; };
 		DBB735191EDE1AFD00383D6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBB735181EDE1AFD00383D6C /* Assets.xcassets */; };
 		DBB7351C1EDE1AFD00383D6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBB7351A1EDE1AFD00383D6C /* LaunchScreen.storyboard */; };
+		DBB735321EDF4D2400383D6C /* PopularSongsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB735311EDF4D2400383D6C /* PopularSongsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		DBB735181EDE1AFD00383D6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBB7351B1EDE1AFD00383D6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DBB7351D1EDE1AFD00383D6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBB735301EDF4D2400383D6C /* PopularSongsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopularSongsViewController.h; sourceTree = "<group>"; };
+		DBB735311EDF4D2400383D6C /* PopularSongsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopularSongsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +61,9 @@
 		DBB7350B1EDE1AFD00383D6C /* MusicTrends */ = {
 			isa = PBXGroup;
 			children = (
-				DBB7350F1EDE1AFD00383D6C /* AppDelegate.h */,
-				DBB735101EDE1AFD00383D6C /* AppDelegate.m */,
-				DBB735121EDE1AFD00383D6C /* ViewController.h */,
-				DBB735131EDE1AFD00383D6C /* ViewController.m */,
-				DBB735151EDE1AFD00383D6C /* Main.storyboard */,
-				DBB735181EDE1AFD00383D6C /* Assets.xcassets */,
-				DBB7351A1EDE1AFD00383D6C /* LaunchScreen.storyboard */,
+				DBB735231EDF3ADE00383D6C /* Model */,
+				DBB735241EDF3AF900383D6C /* View */,
+				DBB735251EDF3B0500383D6C /* Controller */,
 				DBB7351D1EDE1AFD00383D6C /* Info.plist */,
 				DBB7350C1EDE1AFD00383D6C /* Supporting Files */,
 			);
@@ -77,6 +76,36 @@
 				DBB7350D1EDE1AFD00383D6C /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DBB735231EDF3ADE00383D6C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DBB7350F1EDE1AFD00383D6C /* AppDelegate.h */,
+				DBB735101EDE1AFD00383D6C /* AppDelegate.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		DBB735241EDF3AF900383D6C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DBB735151EDE1AFD00383D6C /* Main.storyboard */,
+				DBB735181EDE1AFD00383D6C /* Assets.xcassets */,
+				DBB7351A1EDE1AFD00383D6C /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		DBB735251EDF3B0500383D6C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DBB735121EDE1AFD00383D6C /* ViewController.h */,
+				DBB735131EDE1AFD00383D6C /* ViewController.m */,
+				DBB735301EDF4D2400383D6C /* PopularSongsViewController.h */,
+				DBB735311EDF4D2400383D6C /* PopularSongsViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +183,7 @@
 				DBB735141EDE1AFD00383D6C /* ViewController.m in Sources */,
 				DBB735111EDE1AFD00383D6C /* AppDelegate.m in Sources */,
 				DBB7350E1EDE1AFD00383D6C /* main.m in Sources */,
+				DBB735321EDF4D2400383D6C /* PopularSongsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
