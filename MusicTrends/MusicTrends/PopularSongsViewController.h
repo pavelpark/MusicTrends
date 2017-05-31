@@ -1,13 +1,13 @@
 //
-//  PopularSongTableViewCell.h
+//  PopularSongsViewController.h
 //  MusicTrends
 //
 //  Created by Pavel Parkhomey on 5/31/17.
 //  Copyright © 2017 Pavel Parkhomey. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ViewController.h"
 
-@interface PopularSongTableViewCell : UITableViewCell
+@interface PopularSongsViewController : ViewController
 
 @end
