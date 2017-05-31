@@ -13,8 +13,8 @@
 		DBB735171EDE1AFD00383D6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBB735151EDE1AFD00383D6C /* Main.storyboard */; };
 		DBB735191EDE1AFD00383D6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBB735181EDE1AFD00383D6C /* Assets.xcassets */; };
 		DBB7351C1EDE1AFD00383D6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBB7351A1EDE1AFD00383D6C /* LaunchScreen.storyboard */; };
-		DBB735291EDF41C300383D6C /* PopularSongsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB735271EDF41C300383D6C /* PopularSongsViewController.m */; };
-		DBB7352A1EDF41C300383D6C /* PopularSongsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBB735281EDF41C300383D6C /* PopularSongsViewController.xib */; };
+		DBB7352E1EDF456000383D6C /* PopularSongTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB7352C1EDF456000383D6C /* PopularSongTableViewCell.m */; };
+		DBB7352F1EDF456000383D6C /* PopularSongTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBB7352D1EDF456000383D6C /* PopularSongTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,9 +28,9 @@
 		DBB735181EDE1AFD00383D6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBB7351B1EDE1AFD00383D6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DBB7351D1EDE1AFD00383D6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DBB735261EDF41C300383D6C /* PopularSongsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopularSongsViewController.h; sourceTree = "<group>"; };
-		DBB735271EDF41C300383D6C /* PopularSongsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopularSongsViewController.m; sourceTree = "<group>"; };
-		DBB735281EDF41C300383D6C /* PopularSongsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopularSongsViewController.xib; sourceTree = "<group>"; };
+		DBB7352B1EDF456000383D6C /* PopularSongTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopularSongTableViewCell.h; sourceTree = "<group>"; };
+		DBB7352C1EDF456000383D6C /* PopularSongTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopularSongTableViewCell.m; sourceTree = "<group>"; };
+		DBB7352D1EDF456000383D6C /* PopularSongTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopularSongTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +95,6 @@
 				DBB735151EDE1AFD00383D6C /* Main.storyboard */,
 				DBB735181EDE1AFD00383D6C /* Assets.xcassets */,
 				DBB7351A1EDE1AFD00383D6C /* LaunchScreen.storyboard */,
-				DBB735281EDF41C300383D6C /* PopularSongsViewController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -105,8 +104,9 @@
 			children = (
 				DBB735121EDE1AFD00383D6C /* ViewController.h */,
 				DBB735131EDE1AFD00383D6C /* ViewController.m */,
-				DBB735261EDF41C300383D6C /* PopularSongsViewController.h */,
-				DBB735271EDF41C300383D6C /* PopularSongsViewController.m */,
+				DBB7352B1EDF456000383D6C /* PopularSongTableViewCell.h */,
+				DBB7352C1EDF456000383D6C /* PopularSongTableViewCell.m */,
+				DBB7352D1EDF456000383D6C /* PopularSongTableViewCell.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -172,8 +172,8 @@
 			files = (
 				DBB7351C1EDE1AFD00383D6C /* LaunchScreen.storyboard in Resources */,
 				DBB735191EDE1AFD00383D6C /* Assets.xcassets in Resources */,
+				DBB7352F1EDF456000383D6C /* PopularSongTableViewCell.xib in Resources */,
 				DBB735171EDE1AFD00383D6C /* Main.storyboard in Resources */,
-				DBB7352A1EDF41C300383D6C /* PopularSongsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,8 +186,8 @@
 			files = (
 				DBB735141EDE1AFD00383D6C /* ViewController.m in Sources */,
 				DBB735111EDE1AFD00383D6C /* AppDelegate.m in Sources */,
+				DBB7352E1EDF456000383D6C /* PopularSongTableViewCell.m in Sources */,
 				DBB7350E1EDE1AFD00383D6C /* main.m in Sources */,
-				DBB735291EDF41C300383D6C /* PopularSongsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

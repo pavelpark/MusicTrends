@@ -1,5 +1,5 @@
 //
-//  PopularSongsViewController.h
+//  PopularSongTableViewCell.h
 //  MusicTrends
 //
 //  Created by Pavel Parkhomey on 5/31/17.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PopularSongsViewController : UIViewController
+@interface PopularSongTableViewCell : UITableViewCell
 
 @end
