@@ -58,13 +58,9 @@
 		DBB7350B1EDE1AFD00383D6C /* MusicTrends */ = {
 			isa = PBXGroup;
 			children = (
-				DBB7350F1EDE1AFD00383D6C /* AppDelegate.h */,
-				DBB735101EDE1AFD00383D6C /* AppDelegate.m */,
-				DBB735121EDE1AFD00383D6C /* ViewController.h */,
-				DBB735131EDE1AFD00383D6C /* ViewController.m */,
-				DBB735151EDE1AFD00383D6C /* Main.storyboard */,
-				DBB735181EDE1AFD00383D6C /* Assets.xcassets */,
-				DBB7351A1EDE1AFD00383D6C /* LaunchScreen.storyboard */,
+				DBB735231EDF3ADE00383D6C /* Model */,
+				DBB735241EDF3AF900383D6C /* View */,
+				DBB735251EDF3B0500383D6C /* Controller */,
 				DBB7351D1EDE1AFD00383D6C /* Info.plist */,
 				DBB7350C1EDE1AFD00383D6C /* Supporting Files */,
 			);
@@ -77,6 +73,34 @@
 				DBB7350D1EDE1AFD00383D6C /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DBB735231EDF3ADE00383D6C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DBB7350F1EDE1AFD00383D6C /* AppDelegate.h */,
+				DBB735101EDE1AFD00383D6C /* AppDelegate.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		DBB735241EDF3AF900383D6C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DBB735151EDE1AFD00383D6C /* Main.storyboard */,
+				DBB735181EDE1AFD00383D6C /* Assets.xcassets */,
+				DBB7351A1EDE1AFD00383D6C /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		DBB735251EDF3B0500383D6C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DBB735121EDE1AFD00383D6C /* ViewController.h */,
+				DBB735131EDE1AFD00383D6C /* ViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
