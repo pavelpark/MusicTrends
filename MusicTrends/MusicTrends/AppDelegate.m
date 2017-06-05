@@ -44,7 +44,20 @@
     return YES;
 }
 
+- (void)startAuthenticationFlow {
+    
+    if ([self.auth.session isValid]) {
 
+        [self.player loginWithAccessToken:self.auth.session.accessToken];
+        
+    } else {
+
+        NSURL *authURL = [self.auth spotifyWebAuthenticationURL];
+
+        self.authViewController = [[SFSafariViewController alloc] initWithURL:authURL];
+        [self.window.rootViewController presentViewController:self.authViewController animated:YES completion:nil];
+    }
+}
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
