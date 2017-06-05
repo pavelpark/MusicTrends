@@ -14,6 +14,10 @@
 		DBB735191EDE1AFD00383D6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBB735181EDE1AFD00383D6C /* Assets.xcassets */; };
 		DBB7351C1EDE1AFD00383D6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBB7351A1EDE1AFD00383D6C /* LaunchScreen.storyboard */; };
 		DBB735321EDF4D2400383D6C /* PopularSongsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB735311EDF4D2400383D6C /* PopularSongsViewController.m */; };
+		DBB735351EE5CECB00383D6C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBB735341EE5CECB00383D6C /* AVFoundation.framework */; };
+		DBB735371EE5CED900383D6C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBB735361EE5CED900383D6C /* SystemConfiguration.framework */; };
+		DBB7353B1EE5D42D00383D6C /* SpotifyAudioPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBB7353A1EE5D42D00383D6C /* SpotifyAudioPlayback.framework */; };
+		DBB7353D1EE5D44500383D6C /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBB7353C1EE5D44500383D6C /* SpotifyAuthentication.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,10 @@
 		DBB7351D1EDE1AFD00383D6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBB735301EDF4D2400383D6C /* PopularSongsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopularSongsViewController.h; sourceTree = "<group>"; };
 		DBB735311EDF4D2400383D6C /* PopularSongsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopularSongsViewController.m; sourceTree = "<group>"; };
+		DBB735341EE5CECB00383D6C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		DBB735361EE5CED900383D6C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		DBB7353A1EE5D42D00383D6C /* SpotifyAudioPlayback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAudioPlayback.framework; sourceTree = "<group>"; };
+		DBB7353C1EE5D44500383D6C /* SpotifyAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAuthentication.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +44,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBB735371EE5CED900383D6C /* SystemConfiguration.framework in Frameworks */,
+				DBB7353D1EE5D44500383D6C /* SpotifyAuthentication.framework in Frameworks */,
+				DBB735351EE5CECB00383D6C /* AVFoundation.framework in Frameworks */,
+				DBB7353B1EE5D42D00383D6C /* SpotifyAudioPlayback.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +59,7 @@
 			children = (
 				DBB7350B1EDE1AFD00383D6C /* MusicTrends */,
 				DBB7350A1EDE1AFD00383D6C /* Products */,
+				DBB735331EE5CECB00383D6C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +119,17 @@
 				DBB735311EDF4D2400383D6C /* PopularSongsViewController.m */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		DBB735331EE5CECB00383D6C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DBB7353C1EE5D44500383D6C /* SpotifyAuthentication.framework */,
+				DBB7353A1EE5D42D00383D6C /* SpotifyAudioPlayback.framework */,
+				DBB735361EE5CED900383D6C /* SystemConfiguration.framework */,
+				DBB735341EE5CECB00383D6C /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,8 +328,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6X88V8MC7R;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MusicTrends/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MyFirstApp..MusicTrends;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -316,8 +345,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6X88V8MC7R;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MusicTrends/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MyFirstApp..MusicTrends;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
