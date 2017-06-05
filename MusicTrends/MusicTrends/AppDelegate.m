@@ -24,7 +24,7 @@
     self.player = [SPTAudioStreamingController sharedInstance];
     
     self.auth.clientID = @"f974e9e0a67f4cd6bca29adde6176954";
-    self.auth.redirectURL = [NSURL URLWithString:@"musictrends://returnafterlogin"];
+    self.auth.redirectURL = [NSURL URLWithString:@"MusicTrends://returnAfterLogin"];
     
     self.auth.sessionUserDefaultsKey = @"current session";
     self.auth.requestedScopes = @[SPTAuthStreamingScope];
@@ -44,6 +44,7 @@
     return YES;
 }
 
+//We check if the session is valid, if it is valid we run the music player view.
 - (void)startAuthenticationFlow {
     
     if ([self.auth.session isValid]) {
@@ -58,6 +59,35 @@
         [self.window.rootViewController presentViewController:self.authViewController animated:YES completion:nil];
     }
 }
+
+- (BOOL)application:(UIApplication *)app
+            openURL:(NSURL *)url
+            options:(NSDictionary *)options {
+
+    if ([self.auth canHandleURL:url]) {
+        [self.authViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+        self.authViewController = nil;
+        //Parse the incoming url to a session object
+        [self.auth handleAuthCallbackWithTriggeredAuthURL:url callback:^(NSError *error, SPTSession *session) {
+            if (session) {
+                //login the user to the player
+                [self.player loginWithAccessToken:self.auth.session.accessToken];
+            }
+        }];
+        return YES;
+    }
+    return NO;
+}
+
+- (void)audioStreamingDidLogin:(SPTAudioStreamingController *)audioStreaming {
+    [self.player playSpotifyURI:@"spotify:track:58s6EuEYJdlb0kO7awm3Vp" startingWithIndex:0 startingWithPosition:0 callback:^(NSError *error) {
+        if (error != nil) {
+            NSLog(@"*** failed to play: %@", error);
+            return;
+        }
+    }];
+}
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
