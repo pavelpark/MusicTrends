@@ -10,15 +10,41 @@
 
 @interface AppDelegate ()
 
+@property(strong, nonatomic) SPTAuth *auth;
+@property(strong, nonatomic) SPTAudioStreamingController *player;
+@property(strong, nonatomic) UIViewController *authViewController;
 @end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    self.auth = [SPTAuth defaultInstance];
+    self.player = [SPTAudioStreamingController sharedInstance];
+    
+    self.auth.clientID = @"f974e9e0a67f4cd6bca29adde6176954";
+    self.auth.redirectURL = [NSURL URLWithString:@"musictrends://returnafterlogin"];
+    
+    self.auth.sessionUserDefaultsKey = @"current session";
+    self.auth.requestedScopes = @[SPTAuthStreamingScope];
+    
+    self.player.delegate = self;
+    
+    NSError *audioStreamingInitError;
+    
+    NSAssert([self.player startWithClientId:self.auth.clientID error:&audioStreamingInitError],
+             @"There was a problem starting the Spotify SDK: %@", audioStreamingInitError.description);
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self startAuthenticationFlow];
+        
+    });
+    
     return YES;
 }
+
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
