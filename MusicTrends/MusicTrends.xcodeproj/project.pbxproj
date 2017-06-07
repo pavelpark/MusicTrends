@@ -23,8 +23,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DB05CF881EE7D52900C8D93E /* AFNetworking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AFNetworking; sourceTree = "<group>"; };
-		DB05CF8C1EE7D55A00C8D93E /* UIKit+AFNetworking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "UIKit+AFNetworking"; sourceTree = "<group>"; };
+		2424026B7F385114885CDD4F /* Pods-MusicTrends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicTrends.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MusicTrends/Pods-MusicTrends.debug.xcconfig"; sourceTree = "<group>"; };
+		6E468BE382A7DBEBB854293F /* libPods-MusicTrends.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MusicTrends.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		99C7533EFC888CCF59EADC46 /* Pods-MusicTrends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicTrends.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicTrends/Pods-MusicTrends.release.xcconfig"; sourceTree = "<group>"; };
+		DB05CF881EE7D52900C8D93E /* AFNetworking */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AFNetworking; path = ../AFNetworking; sourceTree = "<group>"; };
+		DB05CF8C1EE7D55A00C8D93E /* UIKit+AFNetworking */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "UIKit+AFNetworking"; path = "../UIKit+AFNetworking"; sourceTree = "<group>"; };
 		DBB735091EDE1AFD00383D6C /* MusicTrends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicTrends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBB7350D1EDE1AFD00383D6C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DBB7350F1EDE1AFD00383D6C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -63,9 +66,8 @@
 			children = (
 				DBB7350B1EDE1AFD00383D6C /* MusicTrends */,
 				DBB7350A1EDE1AFD00383D6C /* Products */,
-				DB05CF881EE7D52900C8D93E /* AFNetworking */,
-				DB05CF8C1EE7D55A00C8D93E /* UIKit+AFNetworking */,
 				DBB735331EE5CECB00383D6C /* Frameworks */,
+				FC870EA24DC130D86A34E37E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,6 +82,8 @@
 		DBB7350B1EDE1AFD00383D6C /* MusicTrends */ = {
 			isa = PBXGroup;
 			children = (
+				DB05CF881EE7D52900C8D93E /* AFNetworking */,
+				DB05CF8C1EE7D55A00C8D93E /* UIKit+AFNetworking */,
 				DBB735231EDF3ADE00383D6C /* Model */,
 				DBB735241EDF3AF900383D6C /* View */,
 				DBB735251EDF3B0500383D6C /* Controller */,
@@ -134,8 +138,18 @@
 				DBB7353A1EE5D42D00383D6C /* SpotifyAudioPlayback.framework */,
 				DBB735361EE5CED900383D6C /* SystemConfiguration.framework */,
 				DBB735341EE5CECB00383D6C /* AVFoundation.framework */,
+				6E468BE382A7DBEBB854293F /* libPods-MusicTrends.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC870EA24DC130D86A34E37E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2424026B7F385114885CDD4F /* Pods-MusicTrends.debug.xcconfig */,
+				99C7533EFC888CCF59EADC46 /* Pods-MusicTrends.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,9 +159,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DBB735201EDE1AFD00383D6C /* Build configuration list for PBXNativeTarget "MusicTrends" */;
 			buildPhases = (
+				90B893107100134D9DFA8DE6 /* [CP] Check Pods Manifest.lock */,
 				DBB735051EDE1AFD00383D6C /* Sources */,
 				DBB735061EDE1AFD00383D6C /* Frameworks */,
 				DBB735071EDE1AFD00383D6C /* Resources */,
+				43CAE7D90D12025A7FEAA3F0 /* [CP] Embed Pods Frameworks */,
+				225D0A5A7E3695C24F0B7915 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -206,6 +223,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		225D0A5A7E3695C24F0B7915 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MusicTrends/Pods-MusicTrends-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		43CAE7D90D12025A7FEAA3F0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MusicTrends/Pods-MusicTrends-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90B893107100134D9DFA8DE6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DBB735051EDE1AFD00383D6C /* Sources */ = {
@@ -333,6 +398,7 @@
 		};
 		DBB735211EDE1AFD00383D6C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2424026B7F385114885CDD4F /* Pods-MusicTrends.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6X88V8MC7R;
@@ -350,6 +416,7 @@
 		};
 		DBB735221EDE1AFD00383D6C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99C7533EFC888CCF59EADC46 /* Pods-MusicTrends.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6X88V8MC7R;
