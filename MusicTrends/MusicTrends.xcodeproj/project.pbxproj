@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB05CF891EE7D52900C8D93E /* AFNetworking in Resources */ = {isa = PBXBuildFile; fileRef = DB05CF881EE7D52900C8D93E /* AFNetworking */; };
+		DB05CF8D1EE7D55A00C8D93E /* UIKit+AFNetworking in Resources */ = {isa = PBXBuildFile; fileRef = DB05CF8C1EE7D55A00C8D93E /* UIKit+AFNetworking */; };
 		DBB7350E1EDE1AFD00383D6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB7350D1EDE1AFD00383D6C /* main.m */; };
 		DBB735111EDE1AFD00383D6C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB735101EDE1AFD00383D6C /* AppDelegate.m */; };
 		DBB735141EDE1AFD00383D6C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB735131EDE1AFD00383D6C /* ViewController.m */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DB05CF881EE7D52900C8D93E /* AFNetworking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AFNetworking; sourceTree = "<group>"; };
+		DB05CF8C1EE7D55A00C8D93E /* UIKit+AFNetworking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "UIKit+AFNetworking"; sourceTree = "<group>"; };
 		DBB735091EDE1AFD00383D6C /* MusicTrends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicTrends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBB7350D1EDE1AFD00383D6C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DBB7350F1EDE1AFD00383D6C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -59,6 +63,8 @@
 			children = (
 				DBB7350B1EDE1AFD00383D6C /* MusicTrends */,
 				DBB7350A1EDE1AFD00383D6C /* Products */,
+				DB05CF881EE7D52900C8D93E /* AFNetworking */,
+				DB05CF8C1EE7D55A00C8D93E /* UIKit+AFNetworking */,
 				DBB735331EE5CECB00383D6C /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -193,7 +199,9 @@
 			files = (
 				DBB7351C1EDE1AFD00383D6C /* LaunchScreen.storyboard in Resources */,
 				DBB735191EDE1AFD00383D6C /* Assets.xcassets in Resources */,
+				DB05CF8D1EE7D55A00C8D93E /* UIKit+AFNetworking in Resources */,
 				DBB735171EDE1AFD00383D6C /* Main.storyboard in Resources */,
+				DB05CF891EE7D52900C8D93E /* AFNetworking in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +384,7 @@
 				DBB735221EDE1AFD00383D6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
