@@ -1,0 +1,5 @@
+target “MusicTrends” do
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, ’10.0’
+pod 'AFNetworking', '~> 2.5'
+end
