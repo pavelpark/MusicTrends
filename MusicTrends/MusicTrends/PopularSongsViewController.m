@@ -7,6 +7,7 @@
 //
 
 #import "PopularSongsViewController.h"
+#import "SpotifyAPI.h"
 
 @interface PopularSongsViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -22,6 +23,8 @@
                             stringForKey:@"kAccessToken"];
     
     NSLog(@"Token %@", savedValue);
+    [SpotifyAPI getArtists];
+    
 }
 
 
