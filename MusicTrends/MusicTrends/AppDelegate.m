@@ -50,7 +50,8 @@
     if ([self.auth.session isValid]) {
 
         [self.player loginWithAccessToken:self.auth.session.accessToken];
-        
+        [[NSUserDefaults standardUserDefaults] setObject:self.auth.session.accessToken forKey:@"kAccessToken"];
+
     } else {
 
         NSURL *authURL = [self.auth spotifyWebAuthenticationURL];
@@ -64,7 +65,7 @@
             openURL:(NSURL *)url
             options:(NSDictionary *)options {
 
-    if ([self.auth canHandleURL:url]) {
+//    if ([self.auth canHandleURL:url]) {
         [self.authViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
         self.authViewController = nil;
         //Parse the incoming url to a session object
@@ -75,9 +76,25 @@
             }
         }];
         return YES;
-    }
-    return NO;
+//    }
+//    return NO;
 }
+
+//- (NSString *)accessTokenFromString:(NSString *)string {
+//    if ([string containsString:@"access_token"]) {
+//        NSArray *comps = [string componentsSeparatedByString:@"#"];
+//        for (NSString *comp in comps) {
+//            if ([comp containsString:@"access_token"]) {
+//                NSArray *equals = [comp componentsSeparatedByString:@"="];
+//                
+//                NSString *token = [equals[1] componentsSeparatedByString:@"&"][0];
+//                return token;
+//            }
+//        }
+//        
+//    }
+//    return nil;
+//}
 
 - (void)audioStreamingDidLogin:(SPTAudioStreamingController *)audioStreaming {
     [self.player playSpotifyURI:@"spotify:track:58s6EuEYJdlb0kO7awm3Vp" startingWithIndex:0 startingWithPosition:0 callback:^(NSError *error) {

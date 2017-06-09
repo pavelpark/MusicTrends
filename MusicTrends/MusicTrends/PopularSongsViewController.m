@@ -18,8 +18,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSString *savedValue = [[NSUserDefaults standardUserDefaults]
+                            stringForKey:@"kAccessToken"];
     
+    NSLog(@"Token %@", savedValue);
 }
+
 
 //UITableViewDataSourceMethods
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -33,4 +37,6 @@
     
     return cell;
 }
+
+
 @end
