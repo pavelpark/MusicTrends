@@ -21,6 +21,7 @@
 		DBB7353B1EE5D42D00383D6C /* SpotifyAudioPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBB7353A1EE5D42D00383D6C /* SpotifyAudioPlayback.framework */; };
 		DBB7353D1EE5D44500383D6C /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBB7353C1EE5D44500383D6C /* SpotifyAuthentication.framework */; };
 		DBD9B4A81EEA2DA20023F6DB /* SpotifyAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD9B4A71EEA2DA20023F6DB /* SpotifyAPI.m */; };
+		DBD9B4AC1EEA65710023F6DB /* ArtistSongsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD9B4AB1EEA65710023F6DB /* ArtistSongsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,8 @@
 		DBB7353C1EE5D44500383D6C /* SpotifyAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAuthentication.framework; sourceTree = "<group>"; };
 		DBD9B4A61EEA2DA20023F6DB /* SpotifyAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotifyAPI.h; sourceTree = "<group>"; };
 		DBD9B4A71EEA2DA20023F6DB /* SpotifyAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotifyAPI.m; sourceTree = "<group>"; };
+		DBD9B4AA1EEA65710023F6DB /* ArtistSongsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtistSongsViewController.h; sourceTree = "<group>"; };
+		DBD9B4AB1EEA65710023F6DB /* ArtistSongsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtistSongsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +135,8 @@
 				DBB735131EDE1AFD00383D6C /* ViewController.m */,
 				DBB735301EDF4D2400383D6C /* PopularSongsViewController.h */,
 				DBB735311EDF4D2400383D6C /* PopularSongsViewController.m */,
+				DBD9B4AA1EEA65710023F6DB /* ArtistSongsViewController.h */,
+				DBD9B4AB1EEA65710023F6DB /* ArtistSongsViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -286,6 +291,7 @@
 				DBB735111EDE1AFD00383D6C /* AppDelegate.m in Sources */,
 				DBB7350E1EDE1AFD00383D6C /* main.m in Sources */,
 				DBB735321EDF4D2400383D6C /* PopularSongsViewController.m in Sources */,
+				DBD9B4AC1EEA65710023F6DB /* ArtistSongsViewController.m in Sources */,
 				DBD9B4A81EEA2DA20023F6DB /* SpotifyAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
