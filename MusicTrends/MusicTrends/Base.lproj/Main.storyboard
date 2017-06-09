@@ -35,7 +35,7 @@
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="showPopularSongs:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9vB-ae-Tvu"/>
+                                    <segue destination="y8e-57-xdl" kind="show" id="asO-rG-lJQ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -50,9 +50,6 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sAr-M9-DkZ" secondAttribute="bottom" constant="111" id="qpA-1G-bX9"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="ShowPopularSongs" destination="sAr-M9-DkZ" id="CQH-EN-cLZ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -120,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fjj-2d-qLK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1080.8" y="52.623688155922046"/>
+            <point key="canvasLocation" x="1119" y="53"/>
         </scene>
     </scenes>
     <resources>

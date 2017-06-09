@@ -7,6 +7,7 @@
 //
 
 #import "PopularSongsViewController.h"
+#import "SpotifyAPI.h"
 
 @interface PopularSongsViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -18,8 +19,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSString *savedValue = [[NSUserDefaults standardUserDefaults]
+                            stringForKey:@"kAccessToken"];
+    
+    NSLog(@"Token %@", savedValue);
+    [SpotifyAPI getArtists];
     
 }
+
 
 //UITableViewDataSourceMethods
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -33,4 +40,6 @@
     
     return cell;
 }
+
+
 @end
