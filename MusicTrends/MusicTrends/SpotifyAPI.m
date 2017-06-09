@@ -22,7 +22,7 @@
     NSString *authString = [NSString stringWithFormat:@"Bearer  %@", accessToken];
     [request setValue:authString forHTTPHeaderField:@"Authorization"];
     
-    NSURLSessionDataTask *dataTask = [defaultSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+   NSURLSessionDataTask *dataTask = [defaultSession dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
        
         if (error) {
             NSLog(@"Error Fetching %@", error.localizedDescription);
