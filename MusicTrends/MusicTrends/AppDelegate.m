@@ -19,22 +19,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
-    self.auth = [SPTAuth defaultInstance];
-    self.player = [SPTAudioStreamingController sharedInstance];
     
+    self.auth = [SPTAuth defaultInstance];
     self.auth.clientID = @"f974e9e0a67f4cd6bca29adde6176954";
     self.auth.redirectURL = [NSURL URLWithString:@"MusicTrends://returnAfterLogin"];
     
     self.auth.sessionUserDefaultsKey = @"current session";
-    self.auth.requestedScopes = @[SPTAuthStreamingScope];
-    
-    self.player.delegate = self;
-    
-    NSError *audioStreamingInitError;
-    
-    NSAssert([self.player startWithClientId:self.auth.clientID error:&audioStreamingInitError],
-             @"There was a problem starting the Spotify SDK: %@", audioStreamingInitError.description);
+    self.auth.requestedScopes = @[SPTAuthUserReadTopScope];
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [self startAuthenticationFlow];
@@ -43,7 +34,6 @@
     
     return YES;
 }
-
 //We check if the session is valid, if it is valid we run the music player view.
 - (void)startAuthenticationFlow {
     
