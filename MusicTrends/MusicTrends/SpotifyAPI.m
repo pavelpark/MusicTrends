@@ -10,7 +10,8 @@
 
 @implementation SpotifyAPI
 
-+ (void)getArtists{
+
++(void)getArtistsWithCompletion:(TopArtistsCompletionHandler)completion{
     NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *defaultSession = [NSURLSession sessionWithConfiguration:defaultConfigObject];
     
@@ -27,10 +28,12 @@
         
         if (error) {
             NSLog(@"Error Fetching %@", error.localizedDescription);
+            completion(error, nil);
         }
         NSLog(@"Response Code: %@", response);
         
       
+        
         
     }];
     
