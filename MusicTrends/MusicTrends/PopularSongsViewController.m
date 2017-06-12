@@ -12,6 +12,7 @@
 @interface PopularSongsViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @property (weak, nonatomic) NSArray<NSDictionary *> *artistObj;
 @end
 

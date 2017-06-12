@@ -32,10 +32,33 @@
         }
         NSLog(@"Response Code: %@", response);
         
-      
+        NSDictionary *topArtistJSON = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+        //NSLog(@"TOP ARTIST: %@", topArtistJSON);
         
+        NSMutableArray *allArtists =[[NSMutableArray alloc]init];
+        
+        //Breakes down a big dictionary into smaller ones.
+        for (NSDictionary *artistDictionary in [topArtistJSON allValues]) {
+            
+            NSDictionary *artistObject = @{
+                                         @"name" : artistDictionary[@"name"],
+                                         @"spotifyURL" : artistDictionary[@"spotifyURL"],
+                                         @"imageURL" : artistDictionary[@"imageURL"],
+                                         @"artistID" : artistDictionary[@"artistID"]
+                                         };
+            [allArtists addObject:artistObject];
+        }
+        
+        if (completion) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion (error,[allArtists copy]);
+            });
+        }
+        
+        //TODO: parse data using NSJSONSerialization, pass in data and options: NSJSONReadingMutableContainers, and error
         
     }];
-    
     [dataTask resume];
-}@end
+    
+}
+@end
