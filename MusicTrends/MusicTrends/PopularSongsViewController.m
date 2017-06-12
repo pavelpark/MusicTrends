@@ -13,7 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property (weak, nonatomic) NSArray<NSDictionary *> *artistObj;
+@property (strong, nonatomic) NSArray<NSDictionary *> *artistObj;
 @end
 
 @implementation PopularSongsViewController
@@ -26,7 +26,10 @@
     NSLog(@"Token %@", savedValue);
     [SpotifyAPI getArtistsWithCompletion:^(NSError *error, NSArray<NSDictionary *> *artistsObjects) {
         self.artistObj = artistsObjects;
-        //todo:reload [self.tableView reloadData]; Once the data is parsed.
+        [self.tableView reloadData];
+        NSLog(@"********* %@", self.artistObj[0]);
+        NSLog(@"Keys: %@", [self.artistObj[2] allValues]);
+        NSLog(@"** object type %@", [self.artistObj[0] class]);
     }];
     
 }
@@ -35,12 +38,15 @@
 //UITableViewDataSourceMethods
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 10;
+    return self.artistObj.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *cellId = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+//    NSLog(@"Artist OBJ: %@", self.artistObj[0]);
+//    NSLog(@"Artist: %@", [self.artistObj[indexPath.row] valueForKey:@"name"]);
+    NSLog(@"%@", [self.artistObj[indexPath.row] valueForKey:@"name"]);
+    cell.textLabel.text = [self.artistObj[indexPath.row] valueForKey:@"name"];
     
     return cell;
 }
