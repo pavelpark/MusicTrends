@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property (weak, nonatomic) NSArray<NSDictionary *> *artistObj;
 @end
 
 @implementation PopularSongsViewController
@@ -23,7 +24,10 @@
                             stringForKey:@"kAccessToken"];
     
     NSLog(@"Token %@", savedValue);
-    [SpotifyAPI getArtists];
+    [SpotifyAPI getArtistsWithCompletion:^(NSError *error, NSArray<NSDictionary *> *artistsObjects) {
+        self.artistObj = artistsObjects;
+        //todo:reload [self.tableView reloadData]; Once the data is parsed.
+    }];
     
 }
 

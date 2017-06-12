@@ -19,22 +19,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
-    self.auth = [SPTAuth defaultInstance];
-    self.player = [SPTAudioStreamingController sharedInstance];
     
+    self.auth = [SPTAuth defaultInstance];
     self.auth.clientID = @"f974e9e0a67f4cd6bca29adde6176954";
     self.auth.redirectURL = [NSURL URLWithString:@"MusicTrends://returnAfterLogin"];
     
     self.auth.sessionUserDefaultsKey = @"current session";
-    self.auth.requestedScopes = @[SPTAuthStreamingScope];
-    
-    self.player.delegate = self;
-    
-    NSError *audioStreamingInitError;
-    
-    NSAssert([self.player startWithClientId:self.auth.clientID error:&audioStreamingInitError],
-             @"There was a problem starting the Spotify SDK: %@", audioStreamingInitError.description);
+    self.auth.requestedScopes = @[SPTAuthUserReadTopScope];
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [self startAuthenticationFlow];
@@ -43,43 +34,36 @@
     
     return YES;
 }
-
 //We check if the session is valid, if it is valid we run the music player view.
 - (void)startAuthenticationFlow {
     
     if ([self.auth.session isValid]) {
-
-        [self.player loginWithAccessToken:self.auth.session.accessToken];
+        
         [[NSUserDefaults standardUserDefaults] setObject:self.auth.session.accessToken forKey:@"kAccessToken"];
-
+        
     } else {
-
+        
         NSURL *authURL = [self.auth spotifyWebAuthenticationURL];
-
+        
         self.authViewController = [[SFSafariViewController alloc] initWithURL:authURL];
         [self.window.rootViewController presentViewController:self.authViewController animated:YES completion:nil];
     }
 }
-
 - (BOOL)application:(UIApplication *)app
             openURL:(NSURL *)url
             options:(NSDictionary *)options {
-
-//    if ([self.auth canHandleURL:url]) {
-        [self.authViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-        self.authViewController = nil;
-        //Parse the incoming url to a session object
-        [self.auth handleAuthCallbackWithTriggeredAuthURL:url callback:^(NSError *error, SPTSession *session) {
-            if (session) {
-                //login the user to the player
-                [self.player loginWithAccessToken:self.auth.session.accessToken];
-            }
-        }];
-        return YES;
-//    }
-//    return NO;
+    
+    [self.authViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    self.authViewController = nil;
+    
+    //Parse the incoming url to a session object
+    [self.auth handleAuthCallbackWithTriggeredAuthURL:url callback:^(NSError *error, SPTSession *session) {
+        [[NSUserDefaults standardUserDefaults] setObject:self.auth.session.accessToken forKey:@"kAccessToken"];
+        
+    }];
+    return YES;
+    
 }
-
 //- (NSString *)accessTokenFromString:(NSString *)string {
 //    if ([string containsString:@"access_token"]) {
 //        NSArray *comps = [string componentsSeparatedByString:@"#"];

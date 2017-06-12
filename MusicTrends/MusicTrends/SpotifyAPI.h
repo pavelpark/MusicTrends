@@ -9,5 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface SpotifyAPI : NSObject
-+(void)getArtists;
+
+typedef void(^TopArtistsCompletionHandler)(NSError *error, NSArray<NSDictionary *>* artistsObjects);
+
++(void)getArtistsWithCompletion:(TopArtistsCompletionHandler)completion;
+
 @end
