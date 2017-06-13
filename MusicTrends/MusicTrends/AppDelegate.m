@@ -64,6 +64,7 @@
     return YES;
     
 }
+
 //- (NSString *)accessTokenFromString:(NSString *)string {
 //    if ([string containsString:@"access_token"]) {
 //        NSArray *comps = [string componentsSeparatedByString:@"#"];
@@ -79,15 +80,6 @@
 //    }
 //    return nil;
 //}
-
-- (void)audioStreamingDidLogin:(SPTAudioStreamingController *)audioStreaming {
-    [self.player playSpotifyURI:@"spotify:track:58s6EuEYJdlb0kO7awm3Vp" startingWithIndex:0 startingWithPosition:0 callback:^(NSError *error) {
-        if (error != nil) {
-            NSLog(@"*** failed to play: %@", error);
-            return;
-        }
-    }];
-}
 
 
 

@@ -45,7 +45,6 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
 //    NSLog(@"Artist OBJ: %@", self.artistObj[0]);
 //    NSLog(@"Artist: %@", [self.artistObj[indexPath.row] valueForKey:@"name"]);
-    NSLog(@"%@", [self.artistObj[indexPath.row] valueForKey:@"name"]);
     cell.textLabel.text = [self.artistObj[indexPath.row] valueForKey:@"name"];
     
     return cell;
