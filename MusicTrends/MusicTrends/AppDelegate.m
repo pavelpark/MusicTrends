@@ -11,7 +11,6 @@
 @interface AppDelegate ()
 
 @property(strong, nonatomic) SPTAuth *auth;
-@property(strong, nonatomic) SPTAudioStreamingController *player;
 @property(strong, nonatomic) UIViewController *authViewController;
 @end
 
@@ -65,6 +64,7 @@
     
 }
 
+
 //- (NSString *)accessTokenFromString:(NSString *)string {
 //    if ([string containsString:@"access_token"]) {
 //        NSArray *comps = [string componentsSeparatedByString:@"#"];
@@ -80,7 +80,6 @@
 //    }
 //    return nil;
 //}
-
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
