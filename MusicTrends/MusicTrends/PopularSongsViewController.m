@@ -50,12 +50,6 @@
     return cell;
 }
 
-//"followers" : {
-//    "href" : null,
-//    "total" : 2844592
-//},
-
-//Will be displaying the amount of followers that each Artist has.
 
 
 @end
